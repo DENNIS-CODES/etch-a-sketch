@@ -1,0 +1,204 @@
+@font-face {
+    font-family:"Jaune v0.6 Trial Grande Bold";
+    src: url("Jaunev0.6-GrandeBold_TRIAL.otf") format('otf');
+}
+
+body {
+    background: #d8cecd;
+    margin: 0;
+    padding: 0;
+}
+
+/* grid styles */
+:root {
+    --grid-columns: 1;
+    --grid-rows: 1;
+}
+
+#main-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#grid-area {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 10%;
+}
+
+#grid-area div {
+    vertical-align: top;
+    height: 100%;
+    width: 100%;
+    float: left;
+    border: 1px solid #d8cecd;
+    background-color: white;
+}
+
+/* text styles */
+#title-section {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family:'Jaune v0.6 Trial Grande Bold';
+    font-size: 36px;
+    color: black;
+    position: absolute;
+    top: 72%;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#text-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#text-section p {
+    font-family: "Principal-Trial-Regular", sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+#left-text {
+    position: absolute;
+    top: 82%;
+    width: 400px;
+    word-wrap: break-word;
+    margin-right: 400px;
+}
+
+#right-text {
+    position: absolute;
+    top: 82%;
+    width: 400px;
+    word-wrap: break-word;
+    text-align: right;
+    margin-left: 400px;
+}
+
+#reset-link {
+    text-decoration: none;
+}
+
+#reset-link:visited {
+    color: black;
+}
+
+#reset-link:hover {
+    text-decoration: underline;
+    color: red;
+    font-weight: bold;
+}
+
+/* modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+}
+
+.modal-content p {
+    font-family: "Principal-Trial-Regular", sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+#cancel-button {
+    font-family: "Principal-Trial-Regular", sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+#submit-button {
+    font-family: "Principal-Trial-Bold", sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+/* modal range slider */
+.slide-container {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background: #000;
+    outline: none;
+    -webkit-transition: 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+}
+
+/* footer styles */
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    margin-left: 8px;
+}
+
+#footer-text {
+    font-family: "Principal-Trial-Regular", sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+#footer-text a {
+    text-decoration: none;
+}
+
+#footer-text a:visited {
+    color: black;
+}
+
+#footer-text a:hover {
+    text-decoration: underline;
+    color: red;
+    font-weight: bold;
+}
+
+/* hover styles */
+.background-one {
+    background-color: #000;
+}
