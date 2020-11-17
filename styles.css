@@ -44,7 +44,6 @@ body {
 
 /* text styles */
 #title-section {
-    width: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -62,7 +61,6 @@ h1 {
 }
 
 #text-section {
-    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -82,9 +80,7 @@ h1 {
 }
 
 #right-text {
-    position: absolute;
-    top: 82%;
-    width: 400px;
+  display: flex;
     word-wrap: break-word;
     text-align: right;
     margin-left: 400px;

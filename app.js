@@ -1,12 +1,44 @@
- const container = document.querySelector('.container');
-const originalGrid = 16;
-let newGrid = document.querySelector('#resize');
-let blankGrid = document.querySelector('#reset');
-let blackSquare = document.querySelector('#black');
-let shadeSquare = document.querySelector('#shade');
-let colorfulSquare = document.querySelector('#random');
-let playerInput;
-let cellNumber;
+let container = document.querySelector('.conatiner');
+let div;
+let maxSize = 550;
+let nCells = 16;
+let sizeOfCells;
+let penColor = '#000' '#FF0000';
+let counter;
+
+const redpen = document.querySelector('#red-pen');
+const black = document.querySelector('#black-pen');
+const rainbowPen = document.querySelector('#rainbow-pen');
+const pencil = document.querySelector('#pencil')
+
+// Get the size of the grid Cells
+function getSizeOfCells(maxSize, nCells) {
+  //set up local version of variable
+  let sizeOfCells;
+  sizeOfCells =  maxSize / nCells;
+  sizeOfCells = sizeOfCells + 'px';
+  return sizeOfCells;
+}
+
+//Generating the grid drawing 
+function makeGrid(nCells) {
+  sizeOfCells = getSizeOfcells(maxSize, nCells);
+
+  container.style['grid-template'] =
+  `repeat(${nCells}, ${sizeOfCells}) / repeat(${nCells}, ${sizeOfCells})`;
+
+  for (let i = 0; < nCells; i++) {
+    for (let j = 0; j < ncells; j++) {
+      div = document.createElement('div');
+      div.classList.add('cell');
+      div.setAttribute('data-counter', 10);
+      container.appendChild(div); 
+    }
+  }
+}
+
+//Changes the color of a cell upon mouse hover
+
 
         // create 16x16 grid on page load
         const gridArea = document.getElementById("grid-area");
