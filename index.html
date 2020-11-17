@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <meta charset="UTF-8"/>
+	<title>Etch-A-Sketch</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<meta charset="UTF-8" />
+	<script src="https://kit.fontawesome.com/yourcode.js">
+
+	</script>
 </head>
+
 <body>
-
-    <main>
-        <div id="main-section">
-            <div id="grid-area">
-
-            </div>
-        </div>
-        <div id="title-section">                
-            <h1 class="title-text">Etch-a-Sketch</h1>
-        </div>
-        <div id="text-section">
-            <p id="right-text"><a href="#reset-modal" id="reset-link">Click here</a> to reset the grid and create a new one.</p>                
-            <p id="left-text">Welcome to the Etch-a-Sketch project! You can change the color of the cells in the grid by passing over them with your mouse.</p>
-        </div>
-        <div id="reset-modal" class="modal">
-            <div class="modal-content">
-                <p>Select the number of cells per side you'd like the new grid to have (max 100).</p>
-                <div class="slide-container">
-                    <input type="range" min="2" max="100" value="16" class="slider" id="gridRange">
+	<div id="title-section">
+		<h1 class="title-text">Etch-a-Sketch</h1>
+	</div>
+	<main>
+		<div id="text-section">
+			<p id="right-text"><a href="#reset-modal" id="reset-link">Click here</a> to reset the grid and create a new one.</p>
+			<p id="left-text">Welcome to the Etch-a-Sketch project! You can change the color of the cells in the grid by passing over
+				them with your mouse.</p>
+		</div>
+		<div id="reset-modal" class="modal">
+			<div class="modal-content">
+				<p>Select the number of cells per side you'd like the new grid to have (max 100).</p>
+				<div class="slide-container">
+					<input type="range" min="2" max="100" value="16" class="slider" id="gridRange">
                 </div>
                 <p id="newGridSize"></p>
                 <button id="cancel-button" class="modal-button">Cancel</button>
                 <button id="submit-button" class="modal-button">Submit</button>
             </div>
         </div>
+        <div id="main-section">
+			<div id="grid-area"></div>
+		</div>
+       
     </main>
     <script src="app.js"></script>
     <footer>
+      <div class="icons">
+        <i class="fas fa-email"></i>
+        <i class="fas fa-facebook"></i>
+        <i class="fas fa-instagram"></i>
+        <i class="fas fa-twitter"></i>
+        <i class="fas fa-linkedin"></i>
+        </div>
         <p id="footer-text"><a href="https://github.com/DENNIS-CODES" target="_blank">GitHub</a></p>
     </footer>
-
-    

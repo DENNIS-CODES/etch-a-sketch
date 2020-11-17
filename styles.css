@@ -51,7 +51,7 @@ body {
 }
 
 h1 {
-    font-family:'Jaune v0.6 Trial Grande Bold';
+    font-family:'Arial Black', 'Courier New';
     font-size: 36px;
     color: black;
     position: absolute;
@@ -74,7 +74,7 @@ h1 {
 }
 
 #left-text {
-    position: absolute;
+    position: bottom;
     top: 82%;
     width: 400px;
     word-wrap: break-word;
