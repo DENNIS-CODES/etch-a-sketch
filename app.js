@@ -3,7 +3,7 @@ let div;
 let maxSize = 550;
 let nCells = 16;
 let sizeOfCells;
-let penColor = '#000' '#FF0000';
+let penColor = '#000';
 let counter;
 
 const redpen = document.querySelector('#red-pen');
@@ -27,7 +27,7 @@ function makeGrid(nCells) {
   container.style['grid-template'] =
   `repeat(${nCells}, ${sizeOfCells}) / repeat(${nCells}, ${sizeOfCells})`;
 
-  for (let i = 0; < nCells; i++) {
+  for (let i = 0; i < nCells; i++) {
     for (let j = 0; j < ncells; j++) {
       div = document.createElement('div');
       div.classList.add('cell');
@@ -38,76 +38,38 @@ function makeGrid(nCells) {
 }
 
 //Changes the color of a cell upon mouse hover
+function draw() {
+  grid = document.querySelectorAll('.container > .cell');
 
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].addEventListener('mouseover', function() {
+      grid[i].style.backgroundColor = pencolor;
+    });
+  }
+}
 
-        // create 16x16 grid on page load
-        const gridArea = document.getElementById("grid-area");
+// Reset the grid color to white
+function clearGrid() {
+  for(let i = 0; i < grid.length; i++) {
+    for(let i = 0; i < grid.length; i++) {
+      grid[i].style.backgroundColor = '#FFF'
+    }
+  }
 
-        function createGrid(rows, columns) {
-            gridArea.style.setProperty("--grid-rows", rows);
-            gridArea.style.setProperty("--grid-columns", columns);
-            for (c = 0; c < (rows * columns); c++) {
-                let cell = document.createElement("div");
-                gridArea.appendChild(cell).className = "grid-item";
-                gridArea.appendChild(cell).setAttribute("id", "grid-cell");
-            };
-            redShades();
-        };
+  // creates a new grid with diffrent  sized Cells
+  function replaceGrid() {
+    ncells = prompt('Enter a number between 1 and 50');
+    if (nCells > 50 || nCells <1) {
+      if (typeof(nCells) != 'object') {
+        alert("that's not Within range");
+      }
+    } else {
+      //Remove old grid
+      while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+      } 
 
-        createGrid(16, 16);
-
-        // get modal 
-        let modal = document.getElementById("reset-modal");
-
-        // get button to open modal
-        let resetLink = document.getElementById("reset-link");
-
-        // get cancel button
-        let cancelButton = document.getElementById("cancel-button");
-
-        // get submit button
-        let submitButton = document.getElementById("submit-button");
-
-        // function to open modal
-        resetLink.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // function to close modal
-        cancelButton.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // function to re-size grid
-        submitButton.onclick = function() {
-            gridArea.innerHTML = "";
-            let sliderValue = slider.value;
-            createGrid(sliderValue, sliderValue);
-            sliderOutput.innerHTML = `Current grid size: ${sliderValue}x${sliderValue}`;
-            modal.style.display = "none";
-        }
-
-        // display slider value
-        let slider = document.getElementById("gridRange");
-        let sliderOutput = document.getElementById("newGridSize");
-
-        sliderOutput.innerHTML = `Current grid size: 16x16`;
-
-        slider.oninput = function() {
-            sliderOutput.innerHTML = `New grid size: ${this.value}x${this.value}`;
-        }
-
-        // event listeners to change div color on hover
-        function redShades() {
-            let items = document.querySelectorAll(".grid-item");
-            items.forEach(item => {
-                let baseShade = 0;
-                let redColor = 255;
-                item.addEventListener("mouseover", () => {
-                    redColor -= 25;
-                    item.style.backgroundColor = `rgb(${redColor}, ${baseShade}, ${baseShade})`;
-                });
-            });
-        }
-
-   
+    }
+  }
+}
+  
