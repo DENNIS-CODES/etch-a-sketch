@@ -68,8 +68,33 @@ function clearGrid() {
       while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);
       } 
-
+// Establish new grid
+makeGrid(nCells);
+draw();
     }
   }
+
+  //Randomize colors
+  function getRandomColor() {
+    let r = Math.floor(Math.random()*256);
+    let g = Math.floor(Math.random()*256);
+    let b = Math.floor(Math.random()*256);
+
+    penColor = 'rgb('+r+','+g+','+b+')';
+
+  }
+
+  //Adds a layer of shade
+
+  function shadeColor() {
+    counter = this.getAttributes('data-counter');
+    counter -= 1;
+    this.style.filter= `brightness(${counter*10}%)`;
+    this.setAttribute('data-counter', counter);
+  }
+
+  // switches to black pen when button is clicked
+
+  red
 }
   
