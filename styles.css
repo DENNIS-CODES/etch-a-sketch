@@ -14,7 +14,10 @@ body {
     --grid-columns: 1;
     --grid-rows: 1;
 }
-
+.buttons {
+    text-align: center;
+    padding-bottom: 20px;
+}
 #main-section {
     width: 100%;
     height: 100%;
