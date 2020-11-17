@@ -4,6 +4,7 @@ let maxSize = 550;
 let nCells = 16;
 let sizeOfCells;
 let penColor = '#000';
+let pointColor = '#FF0000';
 let counter;
 
 const redpen = document.querySelector('#red-pen');
@@ -46,12 +47,23 @@ function draw() {
       grid[i].style.backgroundColor = penColor;
     });
   }
+  for (let j = 0; j < grid.length; j++) {
+    grid[j].addEventListener('mouseover', function () {
+      grid[i].style.bckgroundColor = pointColor;
+      });
+    }
 }
 
 // Reset the grid color to white
 function clearGrid() {
   for (let i = 0; i < grid.length; i++) {
     grid[i].style.backgroundColor = '#FFF';
+  }
+}
+
+function clearGrid() {
+  for (let j = 0; j < grid.length; j++) {
+    grid[j].style.backgroundColor = '#FFF';
   }
 }
 
@@ -80,7 +92,7 @@ function getRandomColor() {
   let b = Math.floor(Math.random() * 256);
 
   penColor = 'rgb(' + r + ',' + g + ',' + b + ')';
-
+  pointColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 }
 
 // Adds a layer of shade
@@ -93,12 +105,12 @@ function shadeColor() {
 
 // switches to black pen when button is clicked
 redpen.addEventListener('click', function () {
-  for (let i = 0; i < grid.length; i++) {
-    grid[i].removeEventListener('mouseover', shadeColor);
-    grid[i].removeEventListener('mouseover', getRandomColor);
+  for (let j = 0; j < grid.length; j++) {
+    grid[j].removeEventListener('mouseover', shadeColor);
+    grid[j].removeEventListener('mouseover', getRandomColor);
   }
 
-  pencolor = '#FF0000';
+  pointColor = '#FF0000';
   draw();
 });
 
