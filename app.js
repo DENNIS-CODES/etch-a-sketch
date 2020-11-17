@@ -14,10 +14,11 @@ const pencil = document.querySelector('#pencil')
 // Get the size of the grid Cells
 function getSizeOfCells(maxSize, nCells) {
   //set up local version of variable
-  let sizeOfCells;
-  sizeOfCells =  maxSize / nCells;
-  sizeOfCells = sizeOfCells + 'px';
-  return sizeOfCells;
+  let sizeOfCells; 
+
+    sizeOfCells = maxSize / nCells;
+    sizeOfCells = sizeOfCells + 'px';
+    return sizeOfCells;
 }
 
 //Generating the grid drawing 
@@ -95,6 +96,25 @@ draw();
 
   // switches to black pen when button is clicked
 
-  red
+  redPen.addEventListener('click', function() {
+    for (let i = 0; i < grid.length; i++) {
+      grid[i].removeEventListener('mouseover', shadeColor);
+      grid[i].removeEventListener('mouseover', getRandomColor);
+      }
+
+      pencolor = '#FF0000';
+      draw();
+  });
+
+  //switches to rainbow pen when button is clicked
+  rainbowPen.addEventListener('click', function() {
+    for (let i = 0; i < grid.length; i++) {
+      grid[i].removeEventListener('mouseover', shadeColor);
+      grid[i].addEventListener('mouseover', getRandomColor);
+    }
+    draw();
+  });
+  makeGrid(nCells);
+  draw();
 }
   
