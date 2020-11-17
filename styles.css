@@ -5,19 +5,37 @@
 
 body {
     background: #fef04e;
-    margin: 0;
-    padding: 0;
 }
 
 /* grid styles */
-:root {
-    --grid-columns: 1;
-    --grid-rows: 1;
+ul.center{
+  list-style: none;
+  align-items: center;
+  display: inline;
 }
-.buttons {
-    text-align: center;
-    padding-bottom: 20px;
+h1{
+  display: flex;
+  font-family: cursive;
+  font-weight: bolder;
 }
+button{
+  list-style: none;
+  align-items: center;
+  display: inline-table;
+  align-content: center;
+  padding: 10px 20px;
+  width: 100px;
+  height: 60px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: cursive;
+  background: #000803;
+  border: none;
+  color: #d23200;
+  border-radius: 6px;
+  cursor: pointer;
+    }
 .container {
     display: grid;
     justify-content: center;

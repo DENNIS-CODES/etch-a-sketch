@@ -1,7 +1,7 @@
 let container = document.querySelector('.container');
 let div;
 let maxSize = 550;
-let nCells = 16;
+let nCells = 17;
 let sizeOfCells;
 let penColor = '#000';
 let pointColor = '#FF0000';
@@ -47,23 +47,12 @@ function draw() {
       grid[i].style.backgroundColor = penColor;
     });
   }
-  for (let j = 0; j < grid.length; j++) {
-    grid[j].addEventListener('mouseover', function () {
-      grid[i].style.bckgroundColor = pointColor;
-      });
-    }
 }
 
 // Reset the grid color to white
 function clearGrid() {
   for (let i = 0; i < grid.length; i++) {
     grid[i].style.backgroundColor = '#FFF';
-  }
-}
-
-function clearGrid() {
-  for (let j = 0; j < grid.length; j++) {
-    grid[j].style.backgroundColor = '#FFF';
   }
 }
 
@@ -105,9 +94,9 @@ function shadeColor() {
 
 // switches to black pen when button is clicked
 redpen.addEventListener('click', function () {
-  for (let j = 0; j < grid.length; j++) {
-    grid[j].removeEventListener('mouseover', shadeColor);
-    grid[j].removeEventListener('mouseover', getRandomColor);
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].removeEventListener('mouseover', shadeColor);
+    grid[i].removeEventListener('mouseover', getRandomColor);
   }
 
   pointColor = '#FF0000';
@@ -140,6 +129,7 @@ rainbowPen.addEventListener('click', function () {
 pencil.addEventListener('click', function () {
   counter = 0;
   penColor = 'rgba(250, 250, 250, 1)';
+  pointColor = 'rgba(207, 0, 15, 1)';
 
   for (let i = 0; i < grid.length; i++) {
     grid[i].removeEventListener('mouseover', getRandomColor);
